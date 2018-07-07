@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
+let OA = One_Away()
+
+OA.startingPoint()
 
