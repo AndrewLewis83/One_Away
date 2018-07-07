@@ -34,8 +34,33 @@ class One_Away {
         var oneAway = false
         
         
+        if firstString.count - secondString.count > 2 || firstString.count - secondString.count < -2 {
+            return oneAway
+        }
         
+        for letters in firstString.indices {
+            
+            let character = firstString[letters]
+            var count = 0
+            
+            for characters in firstString.indices {
+                if character == firstString[characters]{
+                    count += 1
+                }
+            }
+            
+            for characters in secondString.indices {
+                if character == secondString[characters]{
+                    count -= 1
+                }
+            }
+            
+            if count > 2 || count < -2 {
+                return oneAway
+            }
+        }
         
+        oneAway = true
         return oneAway
     }
 }
